@@ -1,2 +1,2 @@
 # packet-test-js
-JavaScript client for packet-pair deployment
+JavaScript client for the packet-pair deployment.

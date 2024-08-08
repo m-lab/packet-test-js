@@ -10,7 +10,7 @@
   const pt = (function() {
     const staticMetadata = {
       'client_library_name': 'pt-js',
-      'client_library_version': '0.0.2',
+      'client_library_version': '0.0.6',
     };
     // cb creates a default-empty callback function, allowing library users to
     // only need to specify callback functions for the events they care about.

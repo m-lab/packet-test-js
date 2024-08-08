@@ -1,10 +1,11 @@
 {
   "name": "@m-lab/packet-test",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
-  "main": "src/ndt7.js",
+  "main": "src/pt.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify": "minify src/pt.js | sed -e 's/load-worker.js/load-worker.min.js/g' > src/pt.min.js && minify src/pt-download-worker.js > src/pt-download-worker.min.js"
   },
   "keywords": [],
   "author": "",

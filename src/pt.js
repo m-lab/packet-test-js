@@ -4,13 +4,13 @@
   'use strict';
 
   /**
-   * @name ndt7
-   * @namespace ndt7
+   * @name pt
+   * @namespace pt
    */
-  const ndt7 = (function() {
+  const pt = (function() {
     const staticMetadata = {
-      'client_library_name': 'ndt7-js',
-      'client_library_version': '0.0.6',
+      'client_library_name': 'pt-js',
+      'client_library_version': '0.0.2',
     };
     // cb creates a default-empty callback function, allowing library users to
     // only need to specify callback functions for the events they care about.
@@ -44,7 +44,7 @@
      * It uses the callback functions `error`, `serverDiscovery`, and
      * `serverChosen`.
      *
-     * @name ndt7.discoverServerURLS
+     * @name pt.discoverServerURLS
      * @public
      */
     async function discoverServerURLs(config, userCallbacks) {
@@ -205,7 +205,7 @@
      *
      * @return {number} Zero on success, and non-zero error code on failure.
      *
-     * @name ndt7.downloadTest
+     * @name pt.downloadTest
      * @public
      */
     async function downloadTest(config, userCallbacks, urlPromise) {
@@ -215,7 +215,7 @@
         measurement: cb('downloadMeasurement', userCallbacks),
         complete: cb('downloadComplete', userCallbacks),
       };
-      const workerfile = config.downloadworkerfile || 'ndt7-download-worker.js';
+      const workerfile = config.downloadworkerfile || 'pt-download-worker.js';
       return await runNDT7Worker(
           config, callbacks, urlPromise, workerfile, 'download')
           .catch((err) => {
@@ -232,7 +232,7 @@
      *
      * @return {number} Zero on success, and non-zero error code on failure.
      *
-     * @name ndt7.test
+     * @name pt.test
      * @public
      */
     async function test(config, userCallbacks) {
@@ -252,10 +252,10 @@
   })();
 
   // Modules are used by `require`, if this file is included on a web page, then
-  // module will be undefined and we use the window.ndt7 piece.
+  // module will be undefined and we use the window.pt piece.
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = ndt7;
+    module.exports = pt;
   } else {
-    window.ndt7 = ndt7;
+    window.pt = pt;
   }
 })();

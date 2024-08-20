@@ -73,8 +73,7 @@
 
       // If no server was specified then use a loadbalancer. If no loadbalancer
       // is specified, use the locate service from Measurement Lab.
-      // TODO(cristinaleon): Change the URL once the daemonset is deployed in production.
-      const lbURL = (config && ('loadbalancer' in config)) ? new URL(config.loadbalancer) : new URL('https://locate-dot-mlab-sandbox.appspot.com/v2/nearest/pt/ndt7');
+      const lbURL = (config && ('loadbalancer' in config)) ? new URL(config.loadbalancer) : new URL('https://locate.measurementlab.net/v2/nearest/pt/ndt7');
       lbURL.search = metadata;
       callbacks.serverDiscovery({loadbalancer: lbURL});
       const response = await fetch(lbURL).catch((err) => {

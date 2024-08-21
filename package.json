@@ -1,16 +1,19 @@
 {
   "name": "@m-lab/packet-test",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "description": "",
   "main": "src/pt.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "minify src/pt.js | sed -e 's/load-worker.js/load-worker.min.js/g' > src/pt.min.js && minify src/pt-download-worker.js > src/pt-download-worker.min.js"
+    "postinstall": "uglifyjs src/pt.js | sed -e 's/load-worker.js/load-worker.min.js/g' > src/pt.min.js && uglifyjs src/pt-download-worker.js > src/pt-download-worker.min.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "9.8.0"
+  },
+  "dependencies": {
+    "uglify-js": "^3.19.2"
   }
 }

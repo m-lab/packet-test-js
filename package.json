@@ -1,6 +1,6 @@
 {
   "name": "@m-lab/packet-test",
-  "version": "0.0.12",
+  "version": "0.0.16",
   "description": "",
   "main": "src/pt.js",
   "scripts": {

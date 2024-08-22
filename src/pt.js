@@ -55,7 +55,7 @@
         serverDiscovery: cb('serverDiscovery', userCallbacks),
         serverChosen: cb('serverChosen', userCallbacks),
       };
-      let protocol = 'ws';
+      let protocol = 'wss';
       if (config && ('protocol' in config)) {
         protocol = config.protocol;
       }
